@@ -1,0 +1,38 @@
+
+    <div class="container-fluid pt-5 pb-2">
+    <table class="table " style="text-align: center;">
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Date</th>
+          <th scope="col">Category</th>
+          <th scope="col">Expense (in ₹)</th>
+          <th scope="col">Description</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+        {% if result %} 
+          {% for i in result %}
+           {% if i %}
+        <tr>  
+          <td> {{ i.get("addDate") }} </td>
+          <td> {{ i.get("addCategory") }} </td>
+          <td> {{ i.get("addExpense") }} </td>
+          <td> {{ i.get("addDescription") }} </td>
+          <td><button type="button" class="btn btn-success" onclick="window.location.href='http://127.0.0.1:5000/updateExpense/{{ i._id }}';"
+            method="POST">Update</button></td>
+          
+          <td><a type="submit" class="btn btn-danger" onclick="window.location.href='http://127.0.0.1:5000/deleteExpense/{{ i._id }}';"
+          method="POST">delete</a></td>
+        </tr>
+              {% endif %}
+           {% endfor %}
+      {% endif %}
+       
+      </tbody>
+    </table>
+  </div>
+  </div>

@@ -1,0 +1,11 @@
+<nav class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <div class="pt-4 ">
+      <h4>Hi, User</h4>
+    </div>
+  <hr>
+    <a class="nav-link mt-3 {% if active_section == 'add_expense' %} active {% endif %} " id="v-pills-addExpense-tab"  href="{{ url_for('add_expense') }}">Add Expense</a>
+    <a class="nav-link {% if active_section == 'recent_expense' %} active {% endif %}" id="v-pills-recentExpense-tab"  href="{{ url_for('recent_expense') }}">Recent Expense</a>
+    <a class="nav-link {% if active_section == 'monthly_expense' %} active {% endif %}" id="v-pills-monthlyExpense-tab" href="{{ url_for('monthly_expense') }}">Monthly Expense</a>
+    <a class="nav-link {% if active_section == 'visualize_expense' %} active {% endif %}" id="v-pills-visualizeExpense-tab" href="{{ url_for('visualize_expense') }}">Visualization</a>
+    
+  </nav>
